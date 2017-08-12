@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script>
+		// toString
+		// valueOf
+		// charAt
+		// charAt
+		// charCodeAt
+		// concat
+		// indexOf
+		// lastIndexOf
+		// localeCompare
+		// match
+		// replace
+		// search
+		// slice
+		// split
+		// substring
+		// toLowerCase
+		// trim
+	// 1.
+		// var str="aaaassds";
+		// console.log(str.constructor)
+		// console.log(str.toString())
+		// console.log(str.valueOf())
+		// console.log(str.charAt(4))
+	// 2(通用)
+		// charAt,charCodeAt 函数被有意设计成通用的；它不要求它的 this 值是字符串对象。因此，他可以当做方法转移到其他类型对象
+		// var num=128347456;
+		// var obj={
+		// 	c: "aa",
+		// 	v: "bb",
+		// 	s: "cc"
+		// }
+		// console.log("".charAt.apply(num,[3]))
+		// // 调用obj类型无意义，相当于截取[object object]
+		// console.log("".charAt.apply(obj,[0]))
+
+		// console.log("".charCodeAt.apply(num,[3]))
+	// 3(通用)
+		// concat
+		// var str1="aaa",str2="bbb";
+		// var str3=str1.concat(str2);
+		// console.log(str3)
+
+		// var num1=789,num2=456;
+		// var num3="".concat.call(num1,num2);		//字符串
+		// console.log(num3)
+
+		// var arr1=[1,2,3]
+		// var arr2=[4,5,6]
+		// var arr3="".concat.call(arr1,arr2);		//字符串 1,2,34,5,6
+		// arr3=arr3.split(",")
+		// console.log(arr3)
+
+	// 4(通用)
+		// indexOf(searchValue[, fromIndex]) 方法返回调用  String 对象中第一次出现的指定值的索引，开始在 fromIndex进行搜索。如果未找到该值，则返回-1
+		// var str1="asdfghjkhl";
+		// var str3=str1.indexOf("h",3); //从第三位开始查找第一次出现h的索引
+		// console.log(str3)
+
+		// var num1=456789
+		// var num2="".indexOf.call(num1,6,1)
+		// console.log(num2)
+
+		// var arr1=[1,2,3,4,5,6]; 
+		// var arr2="".indexOf.call(arr1,6,0) //先变成字符串“1,2,3,4,5,6”，再查找,因包含",",所以结果除以2
+		// console.log(arr2)
+
+	// 5(通用)
+		// lastIndexOf() 方法返回指定值在调用该方法的字符串中最后出现的位置，如果没找到则返回 -1。从该字符串的后面向前查找，从 fromIndex 处开始。
+		// var str1="asdfghjkhl";
+		// var str3=str1.lastIndexOf("h",3); //从第0位开始查找到第三位，最后一次出现h的索引
+		// console.log(str3)
+	// 6(通用)
+		// localeCompare 
+		// 返回一个数字表示是否 引用字符串 在排序中位于 比较字符串 的前面，后面，或者二者相同。
+		// 当 引用字符串 在 比较字符串 前面时返回 -1
+		// 当 引用字符串 在 比较字符串 后面时返回 1
+		// 相同位置时返回 0
+		// console.log("a".localeCompare("b")) 	//(按码表比较)
+	// 7(通用)
+		// match 
+		// var str = 'For more information, see Chapter 3.4.5.1';
+		// var re = /o/;
+		// var found = str.match(re);
+
+		// console.log(found);
+	// 8(通用)
+		// replace 
+		// var str="asdfga sdfg";
+		// str=str.replace(/a(\s)s/,"xx");  //把第一个"a s"替换成"xx"
+		// console.log(str)
+
+		// var num=789456;
+		// console.log("".replace.call(num,/8(\d+)5/,111))
+	// 9(通用)
+		// search 
+		// var str="asdfga sdfg";
+		// str=str.search(/a(\s)s/);
+		// console.log(str)
+
+		// var arr=[1,2,3,4,5,6,7];
+		// arr="".search.call(arr,5)
+		// console.log(arr)
+	// 10(通用)
+		// slice 切割字符串，包头不包尾 (start,end)：star为负数，表示倒数第几个
+		// var str="asdfga sdfg";
+		// str=str.slice(2,4);
+		// console.log(str)		//df
+
+		// var arr=[1,2,3,4,5,6,7];
+		// arr="".slice.call(arr,3,8);		//,3,4,
+		// console.log(arr)
+	// 11(通用)
+		// split 
+		// var str="as d fg a sd fg";
+		// str=str.split(" ",5);	//以空格为界装换为数组，并取前五个
+		// console.log(str);
+	// 12(通用)
+		// substring 切割字符串，包头不包尾
+	// 	var str="asdfga sdfg";
+	// 	str=str.substring(1, 3);
+	// 	console.log(str)
+
+	// 13(通用)
+	// 	// toLowerCase 
+	// 	console.log("ALPHABET".toLowerCase());		//转换成小写
+	// 	console.log("alphabet".toUpperCase ());		//转换成大写
+	// 14
+		// trim (删除开头和结尾空白)
+		var str="   asdf ga sdfg  ";
+		console.log(str.trim())
+	</script>
+</body>
+</html>

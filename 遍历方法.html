@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+	//求数组各个元素出现次数
+	// 1.forEach(返回值为undefined)
+		var arr1=["a","c","d","a","c","a"];
+		var newArr1={};
+		arr1.forEach( function(element, index) {
+			if(element in newArr1){
+				newArr1[element]++;
+			}else{
+				newArr1[element]=1;
+			}
+		});
+		console.log(newArr1);
+
+	// 2.map(需要返回值)
+		var arr2=["a","c","d","a","c","a"];
+		var newArr2={};
+		arr2.map(function (value,index){
+			if(value in newArr2){
+				newArr2[value]++;
+			}else{
+				newArr2[value]=1;
+			}
+			return newArr2[value];
+		})
+		console.log(newArr2)
+
+	// 3.reduce(需要返回值)
+		var arr3=["a","c","d","a","c","a"];
+		var obj=arr3.reduce(function (acc,value,index){
+			if(value in acc){
+				acc[value]++;
+			}else{
+				acc[value]=1;
+			}
+			return acc;
+		},{});		//acc初始值为{}
+		console.log(obj);
+
+
+	// 4.every(判断是否所有值都满足条件，返回值为布尔值)
+		var arr4=[4,5,6,1,2,8,3];
+		var bool1=arr4.every(function (value,index){
+			return value>5;
+		})
+		console.log(bool1)
+
+	// 5.some(判断是否有超过一个满足条件，返回值为布尔值)
+		var arr5=[4,5,6,1,2,8,3];
+		var bool2=arr5.some(function (value,index){
+			return value>5;
+		})
+		console.log(bool2)
+
+	// 6.filter(判断每个值是否满足条件，满足则返回，返回值为满足条件的数组)
+		var arr6=[4,5,6,1,2,8,3];
+		var bool3=arr6.filter(function (value,index){
+			return value>5;
+		})
+		console.log(bool3)
+	</script>
+</body>
+</html>

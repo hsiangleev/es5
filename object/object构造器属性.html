@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		var obj={
+			a: "aaa",
+			b: "bbb"
+		}
+	// 1.
+		//为Object原型添加方法，所有Object对象都能使用
+		// Object.prototype.say=function (){
+		// 	console.log(666)
+		// }
+		// obj.say()
+		// var obj1={}
+		// obj1.say()
+	// // 2.
+	// 	// Object.getPrototypeOf() 方法返回指定对象的原型（即, 内部[[Prototype]]属性的值）。
+		// console.log(Object.getPrototypeOf(obj))
+		// console.log(Object.getPrototypeOf(obj)===obj.__proto__)
+	// // 3.
+	// 	// Object.getOwnPropertyDescriptor() 方法返回指定对象上一个自有属性对应的属性描述符。（自有属性指的是直接赋予该对象的属性，不需要从原型链上进行查找的属性）
+	// 	console.log(Object.getOwnPropertyDescriptor(obj,"a"))
+	// // 4.
+	// 	// Object.getOwnPropertyNames()方法返回一个由指定对象的所有自身属性的属性名 （包括不可枚举属性） 组成的数组。
+	// 	console.log(Object.getOwnPropertyNames(obj))
+	// // 5.
+	// 	// Object.create() 方法会使用指定的原型对象及其属性去创建一个新的对象
+	// 	var o=Object.create({},{
+	// 		c: {
+	// 			value: 42, 
+	// 			writable: true,		//可写的,可枚举的,可配置的属性
+	// 			enumerable: true,
+	// 			configurable: true 
+	// 		} 
+	// 	})
+	// 	console.log(o)
+	// 	o.say()
+	// // 6.
+	// 	// Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。
+	// 	//修改obj的a属性
+		// console.log(Object.defineProperty(obj,"a",{
+		// 		value: 42, 
+		// 		writable: false,		//不可写的,可枚举的,可配置的属性
+		// 		enumerable: false,
+		// 		configurable: true 
+		// } ))
+	// 	obj.a=88;	//因writable: false，所以不能用赋值运算符改变
+	// 	console.log(obj)
+	// // 7.
+	// 	// Object.defineProperties() 方法直接在一个对象上定义多个新的属性或修改现有属性，并返回该对象。
+	// 	console.log(Object.defineProperties(obj,
+	// 		{
+	// 			a: {
+	// 				value: 42, 
+	// 				writable: true,		//可写的,可枚举的,可配置的属性
+	// 				enumerable: true,
+	// 				configurable: true 
+	// 			},
+	// 			b: {
+	// 				value: 88, 
+	// 				writable: true,		//可写的,可枚举的,可配置的属性
+	// 				enumerable: true,
+	// 				configurable: true 
+	// 			},
+	// 			c: {
+	// 				value: "qwe", 
+	// 				writable: true,		//可写的,可枚举的,可配置的属性
+	// 				enumerable: true,
+	// 				configurable: true 
+	// 			}
+	// 		}
+	// 	))
+	// 8.
+		// Object.seal() 方法可以让一个对象密封，并返回被密封后的对象。密封对象将会阻止向对象添加新的属性，并且会将所有已有属性的可配置性（configurable）置为不可配置（false），即不可修改属性的描述或删除属性。但是可写性描述（writable）为可写（true）的属性的值仍然被修改。
+
+		//不能删除
+		// Object.seal(obj)
+		// //下面代码报错
+		// console.log(Object.defineProperty(obj,"d",{
+		// 		value: "zxc", 
+		// 		writable: true,		//不可写的,可枚举的,可配置的属性
+		// 		enumerable: true
+		// } ))
+		// obj.e="poi";
+		// console.log(obj)
+	// 9.
+		// Object.freeze() 方法可以冻结一个对象，冻结指的是不能向这个对象添加新的属性，不能修改其已有属性的值，不能删除已有属性，以及不能修改该对象已有属性的可枚举性、可配置性、可写性。也就是说，这个对象永远是不可变的。该方法返回被冻结的对象。
+		// console.log(Object.freeze(obj))
+		// //不能修改和添加
+		// obj.a="qwe"
+		// obj.c="ccc"
+		// console.log(obj)
+	// 10
+		// Object.preventExtensions() 方法让一个对象变的不可扩展，也就是永远不能再添加新的属性。
+		// Object.preventExtensions(obj)
+		// //可以修改,不能添加
+		// obj.a="qwe"
+		// obj.c="ccc"
+		// console.log(obj)
+	// 11.
+		// Object.isSealed() 方法判断一个对象是否被密封(sealed)。(返回值为boolean)
+
+	// 12.
+		// Object.isFrozen() 方法判断一个对象是否被冻结 frozen。(返回值为boolean)
+	// 13
+		// Object.isExtensible() 方法判断一个对象是否是可扩展的（是否可以在它上面添加新的属性）。(返回值为boolean)
+	// 14
+		// Object.keys() 方法会返回一个由一个给定对象的 自身 可枚举 属性组成的数组，数组中属性名的排列顺序和使用 for...in 循环遍历该对象时返回的顺序一致 （两者的主要区别是 一个 for-in 循环还会枚举其原型链上的属性）。
+		// console.log(Object.keys(obj))
+	</script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		// toString 
+		// concat 
+		// join
+		// pop
+		// push
+		// reverse
+		// shift
+		// slice
+		// sort
+		// splice
+		// unshift
+		// indexOf
+		// lastIndexOf
+		// every
+		// some
+		// forEach
+		// map
+		// filter
+		// reduce
+		// reduceRight
+	// 1(通用)
+		// // toString 
+		// var arr=[1,2,3];
+		// console.log(arr.toString());
+
+		// var obj={
+		// 	a: "aaa",
+		// 	b: "bbb"
+		// }
+		// //用来判断obj的类型
+		// console.log([].toString.call(obj));
+
+	// 2(通用)
+		// concat 数组合并
+		// var arr1=[1,2,3];
+		// var arr2=[4,5,6];
+		// console.log(arr1.concat(arr2))
+
+		// var obj1={
+		// 	a: "aaa",
+		// 	b: "bbb"
+		// }
+		// var obj2={
+		// 	c: "cccc",
+		// 	d: "dddd"
+		// }
+		// console.log([].concat.call(obj1,obj2)) 		//得到的是一个数组，包含两个对象
+
+	// 3(通用)
+		// join 数组(伪数组)变字符串
+		// var arr1=[1,2,3];
+		// console.log(arr1.join(" "));
+
+		// var obj1={
+		// 	0: "aaa",
+		// 	1: "bbb",
+		// 	length: 2
+		// }
+		// console.log([].join.call(obj1," "))
+	// 4(通用)
+		// pop 删除并返回数组(伪数组)的最后一个元素
+		// var arr1=[1,2,3,4,5,6];
+		// arr1.pop()
+		// console.log(arr1);
+
+		// var obj1={
+		// 	0: "aaa",
+		// 	1: "bbb",
+		// 	length: 2
+		// };
+		// [].pop.call(obj1)
+		// console.log(obj1)
+
+	// 5(通用)
+		// push 将参数以他们出现的顺序追加到数组(伪数组)末尾
+		// var arr1=[1,2,3,4,5,6];
+		// arr1.push(8,9)
+		// console.log(arr1);
+		// //真数组变伪数组
+		// var obj={};
+		// [].push.apply(obj,arr1)
+		// console.log(obj)
+
+		// var obj1={
+		// 	0: "aaa",
+		// 	1: "bbb",
+		// 	length: 2
+		// };
+		// [].push.apply(obj1,["ccc","ddd"])
+		// console.log(obj1)
+
+	// 6(通用)
+		// reverse 重新排列数组元素，以翻转它们的顺序。对象会被当做调用的结果返回。
+		// var arr1=[1,2,3,4,5,6];
+		// arr1.reverse()
+		// console.log(arr1);
+	// 7(通用)
+		// shift  删除并返回数组(伪数组)的第一个元素。
+		// var arr1=[1,2,3,4,5,6];
+		// arr1.shift()
+		// console.log(arr1);
+
+		// var obj1={
+		// 	0: "aaa",
+		// 	1: "bbb",
+		// 	length: 2
+		// };
+		// [].shift.apply(obj1)
+		// console.log(obj1)
+	// 8(通用)
+		// slice  方法需要 start 和 end 两个参数，返回一个数组，这个数组包含从第 start 个元素到 -- 但不包括 -- 第 end 个元素 ( 或如果 end 是 undefined 就到数组末尾 )。如果 start 为负，它会被当做是 length+start，这里的 length 是数组长度。如果 end 为负，它会被当做是 length+end，这里的 length 是数组长度
+		// var arr1=[1,2,3,4,5,6];
+		// console.log(arr1.slice(2,4));
+		// console.log(arr1.slice(1,-1));  //第一个到倒数第一个，不包括倒数第一个
+		// console.log(arr1.slice(-3,5));  //倒数第三个到第五个，不包括倒数第五个
+
+		// //伪数组变真数组
+		// var obj1={
+		// 	0: "aaa",
+		// 	1: "bbb",
+		// 	2: "ccc",
+		// 	3: "ddd",
+		// 	length: 4
+		// };
+		// console.log([].slice.call(obj1,1,3))
+	// 9(通用)
+		// sort(comparefn) 如果 comparefn 不是 undefined，它就必须是个函数，这个函数接受两个参数 x 和 y，如果 x < y 返回一个负值，如果 x = y 返回零，如果 x > y 返回一个正值。
+		// var arr1=[10,2,8,4,1,6];
+		// arr1.sort(function (a,b) {
+		// 	return a<b;		//从大到小
+		// })
+
+		// console.log(arr1)
+		// var arr2=[10,2,8,4,1,6];
+		// arr2.sort(function (a,b) {
+		// 	return Math.random()-0.5;		//随机打乱
+		// })
+		// console.log(arr2)
+	// 10(通用)
+		// splice(start, deleteCount [ , item1 [ , item2 [ , … ] ] ] ) 当以两个或更多参数 start, deleteCount 和 ( 可选的 ) item1, item2, 等等，调用 splice 方法，从数组索引 start 开始的 deleteCount 个数组元素会被替换为参数 item1, item2, 等等
+		// var arr1=[1,2,3,4,5,6];
+		// // arr1.splice(1,3);	//从第一位开始删除三位,返回值为删除的数组
+		// arr1.splice(1,3,22)		//从第一位开始删除三位,并把22添加上去,返回值为删除的数组
+		// console.log(arr1)
+
+		// var obj1={
+		// 	0: "aaa",
+		// 	1: "bbb",
+		// 	2: "ccc",
+		// 	3: "ddd",
+		// 	4: "eee",
+		// 	length: 5
+		// };
+		// console.log([].splice.call(obj1,1,3))  //从第一位开始删除三位,返回值为删除的数组
+		// console.log(obj1)
+	// 11(通用)
+		// unshift 将参数们插入到数组的开始位置，它们在数组中的顺序与它们出现在参数列表中的顺序相同。
+		// var arr=[1,2,3,4,5,6];
+		// console.log(arr.unshift(22,33));  //返回值为新数组长度
+		// console.log(arr)
+
+		// var obj={
+		// 	a: "aaa",
+		// 	b: "bbb"
+		// };
+		// console.log([].unshift.call(obj,"qq","ww"))  //返回值为新数组长度
+		// console.log(obj)
+	// 12(通用)
+		// indexOf ( searchElement [ , fromIndex ] )  fromIndex开始查找的位置。如果该索引值大于或等于数组长度，意味着不会在数组里查找，返回-1。如果参数中提供的索引值是一个负值，则将其作为数组末尾的一个抵消，即-1表示从最后一个元素开始查找，-2表示从倒数第二个元素开始查找 ，以此类推。 注意：如果参数中提供的索引值是一个负值，仍然从前向后查询数组。如果抵消后的索引值仍小于0，则整个数组都将会被查询。其默认值为0.
+
+		// var arr=[1,2,3,4,5,6,7,8,9];
+		// console.log(arr.indexOf(5))		//查找首个值为5的索引,若找不到则返回-1
+		// console.log(arr.indexOf(5,7))	//从第七位开始查找首个值为5的索引,若找不到则返回-1
+
+		// //查找数组中有没有某个值
+		// if(arr.indexOf(6)==-1){
+		// 	console.log("数组中没有")
+		// }else{
+		// 	console.log("数组中有值")
+		// }
+	// 13(通用)
+		// lastIndexOf 从此位置开始逆向查找。默认为数组的长度减 1，即整个数组都被查找。如果该值大于或等于数组的长度，则整个数组会被查找。如果为负值，将其视为从数组末尾向前的偏移。即使该值为负，数组仍然会被从后向前查找。如果该值为负时，其绝对值大于数组长度，则方法返回 -1，即数组不会被查找。
+
+		// var arr=[1,2,3,4,5,6,7,8,5,9];
+		// console.log(arr.lastIndexOf(5))	//查找最后一个值为5的索引,若找不到则返回-1
+		// console.log(arr.lastIndexOf(5,6))	//从第0位查找到第六位，查找最后一个值为5的索引,若找不到则返回-1
+		// console.log(arr.lastIndexOf(5,-1))	//从第0位查找到倒数第一位，查找最后一个值为5的索引,若找不到则返回-1
+	// 14(通用)
+		// every ( callbackfn [ , thisArg ] ) 测试数组的  所有  元素是否都通过了指定函数的测试。调用 callbackfn 时将传入三个参数：元素值，元素的索引，原数组。
+		// var arr=[1,2,3,4,5,6,7,8,5,9];
+		// var boolean=arr.every(function (value,index,array){
+		// 	return typeof value=="number"  //检测数组中的所有值都是数字
+		// })
+		// console.log(boolean)
+	// 15(通用)
+		// some ( callbackfn [ , thisArg ] )  与every相似
+		// 测试数组中的  某些  元素是否通过由提供的函数实现的测试。
+		// var arr=[1,2,3,4,5,"aaS",7,8,5,9];
+		// var boolean=arr.some(function (value,index,array){
+		// 	return typeof value=="string"  //检测数组中的至少有一项为字符串
+		// })
+		// console.log(boolean)
+	// 16(通用)
+		// forEach  ( callbackfn [ , thisArg ] )   返回值为undefined
+		// 对数组的每个元素执行一次提供的函数。(数组遍历)
+		// var arr=[1,2,3,4,5,"aaS",7,8,5,9];
+		// arr.forEach(function (value,index,array){
+		// 	console.log(value+" "+index);   //检测数组中的至少有一项为字符串
+		// })
+	// 17(通用)
+		// map   返回值为新数组
+		// 创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。
+		// var arr=[1,2,3,4,5,"aaS",7,8,5,9];
+		// var newArr=arr.map(function (value,index,array){
+		// 	return value*2
+		// })
+		// console.log(newArr)
+	// 18(通用)
+		// filter 创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。
+		// var arr=[1,2,3,4,5,6,7,8,5,9];
+		// var newArr= arr.filter(function(value,index,array) {
+		// 	return value>5;		//把大于5的数拿出来组成新数组
+		// });
+		// console.log(newArr)
+	// 19(通用)
+		// reduce 对累加器和数组中的每个元素 (从左到右)应用一个函数，将其减少为单个值。
+		// array.reduce(function(accumulator, currentValue, currentIndex, array), initialValue)
+		// accumulator: 上一次调用回调返回的值，或者是提供的初始值（initialValue）
+		// currentValue: 数组中正在处理的元素
+		// currentIndex: 数据中正在处理的元素索引，如果提供了 initialValue ，从0开始；否则从1开始
+		// array: 调用 reduce 的数组
+		// initialValue: 可选项，其值用于第一次调用 callback 的第一个参数。如果没有设置初始值，则将数组中的第一个元素作为初始值。空数组调用reduce时没有设置初始值将会报错。
+
+		//求和
+	// 	var arr=[1,2,3,4,5,6,7,8,9,10];
+	// 	var sum=arr.reduce(function (s,value){
+	// 		return s+value;
+	// 	}, 0);
+	// 	//s初始值为0，依次s加上当前value值(0+1+2+3+...+10)
+	// 	console.log(sum)
+
+	// 	//求数组各个元素出现次数
+	// 	var arr1=["a","c","d","a","c","a"];
+	// 	var obj=arr1.reduce(function (acc,value,index){
+	// 		if(value in acc){	//判断acc中是否有value属性
+	// 			acc[value]++;	//有则属性值自增
+	// 		}else{
+	// 			acc[value]=1	//没有则添加此属性
+	// 		}
+	// 		return acc;			//返回acc对象
+	// 	}, {})
+	// 	console.log(obj)
+	// // 20(通用)
+		// reduceRight 与reduce类似，接受一个函数作为累加器（accumulator）和数组的每个值（从右到左）将其减少为单个值。
+		//求和
+		// var arr=[1,2,3,4,5,6,7,8,9,10];
+		// var sum=arr.reduceRight(function (s,value){
+		// 	return s+value;
+		// }, 0);
+		// //s初始值为0，依次s加上当前value值(0+10+9+8+...+1)
+		// console.log(sum)
+
+
+		
+	</script>
+</body>
+</html>
